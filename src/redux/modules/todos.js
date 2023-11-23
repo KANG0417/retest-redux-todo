@@ -10,12 +10,23 @@ const initialState = [
   },
 ];
 
+const CHANGE_TITLE = "title/CHANGE_TITLE";
+
+export const changeTitle = (title) => ({ type: CHANGE_TITLE, title });
+
 // 리듀서
 const todos = (state = initialState, action) => {
   switch (action.type) {
+    case CHANGE_TITLE:
+      return {
+        ...state,
+        input: action.input,
+      };
     case "ADD_TODO":
-      return; //TODO: 여기 작성
-
+      return {
+        ...state,
+        //TODO: 여기 작성
+      };
     case "DELETE_TODO":
       return; //TODO: 여기 작성
 
