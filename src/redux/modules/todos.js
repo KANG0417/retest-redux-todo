@@ -18,6 +18,8 @@ const SWITCH_TODO = "todos/SWTICH_TODO";
 
 export const changeTitle = (title) => ({ type: CHANGE_TITLE, title });
 export const changeBody = (body) => ({ type: CHANGE_BODY, body });
+export const addTodo = (todos) => ({ type: ADD_TODO, todo: { todos } });
+
 export // 리듀서
 const todos = (state = initialState, action) => {
   switch (action.type) {

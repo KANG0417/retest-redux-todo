@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import Button from "./Button";
+import { addTodo } from "../redux/modules/todos";
 
 function Todos() {
   const todos = useSelector((state) => state.todos);
@@ -26,7 +27,7 @@ function Todos() {
         </label>
         <Button
           onClick={() => {
-            dispatch(ADDTODO({ id: crypto.randomUUID }));
+            dispatch(addTodo({ newTodo }));
           }}
         >
           등록
