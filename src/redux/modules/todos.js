@@ -11,10 +11,14 @@ const initialState = [
 ];
 
 const CHANGE_TITLE = "title/CHANGE_TITLE";
+const CHANGE_BODY = "body/CHANGE_BODY";
+const ADD_TODO = "todos/ADD_TODO";
+const DELETE_TODO = "todos/DELETE_TODO";
+const SWITCH_TODO = "todos/SWTICH_TODO";
 
 export const changeTitle = (title) => ({ type: CHANGE_TITLE, title });
-
-// 리듀서
+export const changeBody = (body) => ({ type: CHANGE_BODY, body });
+export // 리듀서
 const todos = (state = initialState, action) => {
   switch (action.type) {
     case CHANGE_TITLE:
@@ -22,15 +26,21 @@ const todos = (state = initialState, action) => {
         ...state,
         input: action.input,
       };
-    case "ADD_TODO":
+    case CHANGE_BODY:
+      return {
+        ...state,
+        textArea: action.textArea,
+      };
+    case ADD_TODO:
       return {
         ...state,
         //TODO: 여기 작성
+        todos: state.todos,
       };
-    case "DELETE_TODO":
+    case DELETE_TODO:
       return; //TODO: 여기 작성
 
-    case "SWITCH_TODO":
+    case SWITCH_TODO:
       return; //TODO: 여기 작성
 
     default:
